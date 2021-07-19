@@ -7,7 +7,7 @@ node{
         sh 'sudo docker build -t hello .'
     }
     stage("docker run") {
-        sh 'sudo docker container run -i -t hello'
+        sh 'sudo docker container run -i -t hello bash'
     }
      stage('SonarQube analysis') {
     // performing sonarqube analysis with "withSonarQubeENV(<Name of Server configured in Jenkins>)"
