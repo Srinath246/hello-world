@@ -3,4 +3,7 @@ node{
         //git clone
         git 'https://github.com/Srinath246/hello-world.git'
     }
+    stage("docker build") {
+        sh 'docker built -t srinath246/hello .'
+    }
 }
