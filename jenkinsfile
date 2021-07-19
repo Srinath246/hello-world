@@ -4,10 +4,10 @@ node{
         git 'https://github.com/Srinath246/hello-world.git'
     }
     stage("docker build") {
-        sh 'docker build -t srinath246/hello .'
+        sh 'sudo docker build -t srinath246/hello .'
     }
     stage("docker run") {
-        sh 'docker run -it srinath246/hello'
+        sh 'sudo docker run -it srinath246/hello'
     }
      stage('SonarQube analysis') {
     // performing sonarqube analysis with "withSonarQubeENV(<Name of Server configured in Jenkins>)"
