@@ -1,0 +1,18 @@
+node{
+    stage("code from SCM") {
+        //git clone
+        git 'https://github.com/Srinath246/hello-world.git'
+    }
+    stage("docker build"){
+        sh 'docker built -t srinath246/hello .'
+    }
+    stage("docker run"){
+        sh 'docker run -it srinath246/hello'
+    }
+     stage('SonarQube analysis') {
+    // performing sonarqube analysis with "withSonarQubeENV(<Name of Server configured in Jenkins>)"
+    withSonarQubeEnv('sonar') {
+      // requires SonarQube Scanner for Maven 3.2+
+      sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+    }
+}
