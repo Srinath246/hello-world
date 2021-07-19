@@ -6,6 +6,7 @@ node{
     stage("docker build") {
         sh 'docker build -t srinath246/hello .'
     }
+<<<<<<< HEAD
     stage("docker run"){
         sh 'docker run -it srinath246/hello'
     }
@@ -19,3 +20,6 @@ node{
         mail bcc: '', body: '', cc: '', from: '', replyTo: '', subject: 'failed', to: 'Srinathshetty1997@gmail.com'
     }
 }
+=======
+}
+>>>>>>> 11ea3cae4190b6b3c59905096fb654decef7e89f
