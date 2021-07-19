@@ -6,8 +6,7 @@ node{
     stage("docker build") {
         sh 'docker build -t srinath246/hello .'
     }
-<<<<<<< HEAD
-    stage("docker run"){
+    stage("docker run") {
         sh 'docker run -it srinath246/hello'
     }
      stage('SonarQube analysis') {
@@ -15,11 +14,9 @@ node{
     withSonarQubeEnv('sonar') {
       // requires SonarQube Scanner for Maven 3.2+
       sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+        }
     }
     stage('email'){
         mail bcc: '', body: '', cc: '', from: '', replyTo: '', subject: 'failed', to: 'Srinathshetty1997@gmail.com'
     }
 }
-=======
-}
->>>>>>> 11ea3cae4190b6b3c59905096fb654decef7e89f
